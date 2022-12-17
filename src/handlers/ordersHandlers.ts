@@ -24,7 +24,7 @@ const verifyAuthToken = (req: Request  , res: Response, next:express.NextFunctio
 
 const ordersRoutes = (app: express.Application) => {
 
-  app.get('Users/:id/currentOrder',verifyAuthToken, show)
+  app.get('/Users/:id/currentOrder',verifyAuthToken, show)
 }
 
 export default ordersRoutes

@@ -22,6 +22,6 @@ const verifyAuthToken = (req, res, next) => {
     }
 };
 const ordersRoutes = (app) => {
-    app.get('Users/:id/currentOrder', verifyAuthToken, show);
+    app.get('/Users/:id/currentOrder', verifyAuthToken, show);
 };
 exports.default = ordersRoutes;

@@ -9,7 +9,7 @@
     "test": {
       "driver": "pg",
       "host": "127.0.0.1",
-      "database": "firststoredb",
+      "database": "firststoredb_test",
       "user": "main_user",
       "password": "1234"
     }
