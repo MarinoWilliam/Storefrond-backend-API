@@ -39,6 +39,7 @@ const verifyAuthToken = (req, res, next) => {
     }
     catch (error) {
         res.status(401);
+        res.json('Access denied, invalid token');
     }
 };
 const useraRoutes = (app) => {

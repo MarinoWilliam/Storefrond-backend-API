@@ -16,16 +16,6 @@ const show = async (req: Request, res: Response) => {
 
 const create = async (req: Request, res: Response) => {
     try {
-        const authorizationHeader = req.headers.authorization as string
-        const token = authorizationHeader.split(' ')[1]
-        jwt.verify(token, process.env.TOKEN_SECRET as string)
-    } catch(err) {
-        res.status(401)
-        res.json('Access denied, invalid token')
-        return
-    }
-
-    try {
         const Product: product = {
             title: req.body.title,
             price: req.body.price,
@@ -44,10 +34,10 @@ const verifyAuthToken = (req: Request  , res: Response, next:express.NextFunctio
         const authorizationHeader = req.headers.authorization as string
         const token = authorizationHeader.split(' ')[1]
         const decoded = jwt.verify(token, process.env.TOKEN_SECRET as string)
-
         next()
     } catch (error) {
         res.status(401)
+        res.json('Access denied, invalid token')
     }
     }
 

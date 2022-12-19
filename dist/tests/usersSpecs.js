@@ -38,22 +38,4 @@ describe("user Model", () => {
         const result = await user.show("1");
         expect(result).toBeDefined();
     });
-    it('Should return status of 200', async () => {
-        try {
-            const response = await request.get('/users');
-            expect(response.status).toBe(401);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    });
-    it('Should return status of 200', async () => {
-        try {
-            const response = await request.get('/users/1');
-            expect(response.status).toBe(401);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    });
 });

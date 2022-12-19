@@ -45,22 +45,4 @@ describe("product Model", () => {
             price: 10
         });
     });
-    it('Should return status of 200', async () => {
-        try {
-            const response = await request.get('/products');
-            expect(response.status).toBe(200);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    });
-    it('Should return status of 200', async () => {
-        try {
-            const response = await request.get('/products/1');
-            expect(response.status).toBe(200);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    });
 });

@@ -16,16 +16,6 @@ const show = async (req, res) => {
 };
 const create = async (req, res) => {
     try {
-        const authorizationHeader = req.headers.authorization;
-        const token = authorizationHeader.split(' ')[1];
-        jsonwebtoken_1.default.verify(token, process.env.TOKEN_SECRET);
-    }
-    catch (err) {
-        res.status(401);
-        res.json('Access denied, invalid token');
-        return;
-    }
-    try {
         const Product = {
             title: req.body.title,
             price: req.body.price,
@@ -47,6 +37,7 @@ const verifyAuthToken = (req, res, next) => {
     }
     catch (error) {
         res.status(401);
+        res.json('Access denied, invalid token');
     }
 };
 const productsRoutes = (app) => {

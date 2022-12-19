@@ -72,3 +72,11 @@ CREATE DATEBASE firststoredb_test
 
 GRANT ALL PRIVILEGES ON DATABASE firststoredb TO firststoredb
 GRANT ALL PRIVILEGES ON DATABASE firststoredb TO firststoredb_test
+
+
+### before testing 
+-you have to manualy up migrate the database
+### after testing 
+-you have to manualy down migrate the database
+
+-I don't know why the script is not running like we was taught on the course
