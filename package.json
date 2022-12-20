@@ -7,8 +7,9 @@
     "start": "node src/server.ts",
     "build": "npx tsc",
     "watch": "tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "test": "set ENV=test && db-migrate --env test up && jasmine-ts && db-migrate -e test reset",
-    "test_product":"db-migrate up && jasmine-ts && db-migrate reset",
+    "test_old": "set ENV=test && db-migrate --env test up && jasmine-ts  --env test; db-migrate -e test reset",
+    "test": "set ENV=test&& db-migrate --env test up && jasmine-ts && db-migrate -e test reset",
+    "test_product": "db-migrate up && jasmine-ts || db-migrate reset",
     "jasmine": "jasmine",
     "tsc": "tsc"
   },
