@@ -5,3 +5,4 @@ CREATE TABLE Products_Orders (
     userID INTEGER REFERENCES users(id)
 );
 
+

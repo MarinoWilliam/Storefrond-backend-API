@@ -70,13 +70,7 @@ ENV=dev
 CREATE DATABASE firststoredb
 CREATE DATEBASE firststoredb_test
 
-GRANT ALL PRIVILEGES ON DATABASE firststoredb TO firststoredb
-GRANT ALL PRIVILEGES ON DATABASE firststoredb TO firststoredb_test
+GRANT ALL PRIVILEGES ON DATABASE firststoredb TO main_user
+GRANT ALL PRIVILEGES ON DATABASE firststoredb_test TO main_user
 
 
-### before testing 
--you have to manualy up migrate the database
-### after testing 
--you have to manualy down migrate the database
-
--I don't know why the script is not running like we was taught on the course
