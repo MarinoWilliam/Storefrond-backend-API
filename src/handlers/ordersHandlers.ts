@@ -6,8 +6,13 @@ const order = new orderClass()
 
 
 const show = async (req: Request, res: Response) => {
-   const theOrder = await order.show(req.params.id)
-   res.json(theOrder)
+    try {
+        const theOrder = await order.show(req.params.id)
+        res.json(theOrder)
+    } catch (error) {
+        res.status(404)
+    }
+   
 }
 
 const verifyAuthToken = (req: Request  , res: Response, next:express.NextFunction) => {

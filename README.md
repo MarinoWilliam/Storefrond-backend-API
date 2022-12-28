@@ -74,3 +74,6 @@ GRANT ALL PRIVILEGES ON DATABASE firststoredb TO main_user
 GRANT ALL PRIVILEGES ON DATABASE firststoredb_test TO main_user
 
 
+### PORT
+Port umber = 3000
+POSTGRES_HOST=127.0.0.1

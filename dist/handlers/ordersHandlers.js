@@ -7,8 +7,13 @@ const order_1 = require("../models/order");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const order = new order_1.orderClass();
 const show = async (req, res) => {
-    const theOrder = await order.show(req.params.id);
-    res.json(theOrder);
+    try {
+        const theOrder = await order.show(req.params.id);
+        res.json(theOrder);
+    }
+    catch (error) {
+        res.status(404);
+    }
 };
 const verifyAuthToken = (req, res, next) => {
     try {
