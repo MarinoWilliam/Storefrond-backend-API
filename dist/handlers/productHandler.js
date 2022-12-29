@@ -7,12 +7,24 @@ const product_1 = require("../models/product");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const product = new product_1.productClass();
 const index = async (_req, res) => {
-    const theProducts = await product.index();
-    res.json(theProducts);
+    try {
+        const theProducts = await product.index();
+        res.json(theProducts);
+    }
+    catch (error) {
+        res.status(400);
+        res.json(error);
+    }
 };
 const show = async (req, res) => {
-    const theProduct = await product.show(req.params.id);
-    res.json(theProduct);
+    try {
+        const theProduct = await product.show(req.params.id);
+        res.json(theProduct);
+    }
+    catch (error) {
+        res.status(400);
+        res.json(error);
+    }
 };
 const create = async (req, res) => {
     try {

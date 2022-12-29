@@ -7,12 +7,24 @@ const user_1 = require("../models/user");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const user = new user_1.userClass();
 const index = async (_req, res) => {
-    const theUser = await user.index();
-    res.json(theUser);
+    try {
+        const theUser = await user.index();
+        res.json(theUser);
+    }
+    catch (error) {
+        res.status(400);
+        res.json(error);
+    }
 };
 const show = async (req, res) => {
-    const theUsers = await user.show(req.body.id);
-    res.json(theUsers);
+    try {
+        const theUsers = await user.show(req.body.id);
+        res.json(theUsers);
+    }
+    catch (error) {
+        res.status(400);
+        res.json(error);
+    }
 };
 const create = async (req, res) => {
     try {
