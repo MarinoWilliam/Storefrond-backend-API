@@ -5,13 +5,25 @@ import jwt, { Secret } from 'jsonwebtoken'
 const user = new userClass()
 
 const index = async (_req: Request, res: Response) => {
-  const theUser = await user.index()
-  res.json(theUser)
+    try {
+        const theUser = await user.index()
+        res.json(theUser)
+    } catch (error) {
+        res.status(400)
+        res.json(error)
+    }
+  
 }
 
 const show = async (req: Request, res: Response) => {
-   const theUsers = await user.show(req.body.id)
-   res.json(theUsers)
+    try {
+        const theUsers = await user.show(req.body.id)
+        res.json(theUsers)
+    } catch (error) {
+        res.status(400)
+        res.json(error)
+    }
+   
 }
 
 const create = async (req: Request, res: Response) => {
